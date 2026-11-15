@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Login | The Artisanal Layer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffd9de",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#795950",
+                    "tertiary-fixed": "#e9e2d3",
+                    "on-primary-fixed-variant": "#6f3441",
+                    "surface-container-low": "#fff0ed",
+                    "inverse-on-surface": "#ffede9",
+                    "tertiary": "#635e53",
+                    "primary": "#8b4b58",
+                    "surface-variant": "#ffdad2",
+                    "outline-variant": "#d4c2c2",
+                    "tertiary-container": "#d4cdbf",
+                    "background": "#fff8f6",
+                    "surface-bright": "#fff8f6",
+                    "on-surface-variant": "#504444",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#2b1611",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#ffe9e4",
+                    "on-tertiary-fixed-variant": "#4b463c",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "secondary": "#77574d",
+                    "on-tertiary-fixed": "#1e1b13",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fed3c7",
+                    "surface-container-highest": "#ffdad2",
+                    "outline": "#827473",
+                    "surface-tint": "#8b4b58",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "surface-dim": "#f9d1c8",
+                    "secondary-fixed": "#ffdbd0",
+                    "inverse-surface": "#432a25",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#5b574c",
+                    "on-surface": "#2b1611",
+                    "on-primary-fixed": "#390917",
+                    "on-primary-container": "#834451",
+                    "primary-container": "#ffbdc8",
+                    "inverse-primary": "#ffb2bf",
+                    "on-secondary-fixed": "#2c160e",
+                    "primary-fixed-dim": "#ffb2bf",
+                    "surface": "#fff8f6",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#ffe2db",
+                    "tertiary-fixed-dim": "#cdc6b8",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .slow-creamy { transition: all 400ms ease-out; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex items-center justify-center p-4 md:p-8">
+<!-- Main Container: Asymmetric Grid Layout -->
+<main class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-xl bg-surface-container-lowest shadow-[0_12px_32px_rgba(43,22,17,0.06)]">
+<!-- Left Side: Visual Flourish (Editorial Style) -->
+<section class="hidden lg:flex lg:col-span-7 relative min-h-[700px] overflow-hidden bg-primary">
+<div class="absolute inset-0 z-0">
+<img alt="Sonali Cakes Aesthetic" class="w-full h-full object-cover opacity-80 mix-blend-multiply scale-105" data-alt="Close-up of a minimalist tiered white cake with delicate pressed dried flowers, soft morning light hitting the velvet texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Iq-0qbujSFa8F_1YUdS1ege6dWZcnvlrfgmbb7XrcFJgKkYh2KANzz_ifdkZ6tMEwcpjapSnqryzFYkHuePYgtgWzRMI0BOcykA5lhtX0wCqOLp4y2BNw-BBWn-mjN3iO0fJe7hsIUk9w61CCQ4LZ700GyiLxKpG7RCymtkxrJiEEeKP4aiMV1dh2tg47GevQhWUmoT86KBAeNhOFx026iL80gUCOOK697qPtK3njuPA5Y-99GB8Gvs4qcbA2g8NDTpJJOTRwgk"/>
+</div>
+<!-- Glassmorphic Content Overlay -->
+<div class="relative z-10 w-full h-full p-16 flex flex-col justify-between backdrop-blur-sm bg-primary/20">
+<div>
+<span class="text-on-primary font-label text-xs tracking-[0.2em] uppercase mb-4 block">Est. 2024</span>
+<h1 class="text-on-primary font-headline text-5xl md:text-6xl leading-tight -tracking-wider">
+                        The Artisanal <br/> <span class="italic font-light">Layer</span>
+</h1>
+</div>
+<div class="space-y-6">
+<p class="text-on-primary/90 font-body text-lg max-w-sm leading-relaxed">
+                        Curating sweetness through intentional design and the finest ingredients.
+                    </p>
+<div class="flex items-center gap-4">
+<div class="h-[1px] w-12 bg-on-primary/40"></div>
+<span class="text-on-primary/60 font-label text-[10px] uppercase tracking-widest">Bakery Management Suite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: Login Form (The Functional Canvas) -->
+<section class="lg:col-span-5 p-8 md:p-16 flex flex-col justify-center bg-surface-container-lowest">
+<div class="mb-12">
+<h2 class="text-on-surface font-headline text-3xl mb-2">Welcome Back</h2>
+<p class="text-on-surface-variant font-body text-sm">Please enter your credentials to access the gallery admin.</p>
+</div>
+<form class="space-y-8">
+<!-- Username/Email Field -->
+<div class="space-y-2">
+<label class="block font-label text-[10px] uppercase tracking-widest text-outline" for="identity">Email or Username</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary slow-creamy" data-icon="person">person</span>
+<input class="w-full pl-8 py-3 bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface placeholder:text-outline-variant/50 font-body slow-creamy" id="identity" name="identity" placeholder="admin@sonalicakes.com" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<label class="block font-label text-[10px] uppercase tracking-widest text-outline" for="password">Secret Phrase</label>
+<a class="text-primary font-body text-xs hover:underline slow-creamy" href="#">Forgot?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary slow-creamy" data-icon="lock">lock</span>
+<input class="w-full pl-8 py-3 bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface placeholder:text-outline-variant/50 font-body slow-creamy" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-outline hover:text-primary" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me & Security Meta -->
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="text-on-surface-variant font-body text-xs">Keep me authenticated</span>
+</div>
+<!-- Submit Action -->
+<div class="pt-4">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-body font-semibold tracking-wide hover:opacity-90 active:scale-95 slow-creamy shadow-[0_8px_16px_rgba(139,75,88,0.2)]" type="submit">
+                        Sign Into Dashboard
+                    </button>
+</div>
+</form>
+<!-- Footer Notes -->
+<footer class="mt-16 pt-8 border-t border-outline-variant/10">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container"></div>
+<p class="text-[10px] text-outline font-label uppercase tracking-widest">Secure Access Node 04</p>
+</div>
+<p class="text-[11px] text-on-surface-variant/60 leading-relaxed font-body">
+                        This system is restricted to authorized Artisanal Layer personnel only. Unauthorized access attempts are logged and reported.
+                    </p>
+</div>
+</footer>
+</section>
+</main>
+<!-- Background Flourish: Floating Petals (Visual Interest) -->
+<div class="fixed inset-0 -z-10 pointer-events-none opacity-40">
+<div class="absolute top-[10%] left-[5%] w-32 h-32 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[20%] right-[10%] w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
+</div>
+</body></html>

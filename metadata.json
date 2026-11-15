@@ -1,0 +1,8 @@
+{
+  "name": "Sonali Cakes | The Artisanal Layer Admin",
+  "description": "Artisanal bakery and floral confectionery management portal with liquid glass UI, interactive analytics, order workflows, and inventory tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

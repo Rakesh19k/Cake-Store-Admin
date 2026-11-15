@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Portal - Sonali Cakes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed-variant": "#6f3441",
+                "on-secondary-fixed": "#2c160e",
+                "on-error-container": "#93000a",
+                "surface-tint": "#8b4b58",
+                "tertiary-fixed": "#e9e2d3",
+                "surface-bright": "#fff8f6",
+                "on-tertiary-fixed": "#1e1b13",
+                "error-container": "#ffdad6",
+                "secondary": "#77574d",
+                "primary-fixed": "#ffd9de",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#fed3c7",
+                "on-primary": "#ffffff",
+                "surface-container-low": "#fff0ed",
+                "on-primary-fixed": "#390917",
+                "on-secondary-container": "#795950",
+                "tertiary-container": "#d4cdbf",
+                "secondary-fixed-dim": "#e7bdb1",
+                "primary": "#8b4b58",
+                "on-surface": "#2b1611",
+                "secondary-fixed": "#ffdbd0",
+                "inverse-surface": "#432a25",
+                "background": "#fff8f6",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#cdc6b8",
+                "outline-variant": "#d4c2c2",
+                "on-background": "#2b1611",
+                "on-tertiary-container": "#5b574c",
+                "on-error": "#ffffff",
+                "surface-dim": "#f9d1c8",
+                "on-secondary": "#ffffff",
+                "inverse-on-surface": "#ffede9",
+                "error": "#ba1a1a",
+                "primary-fixed-dim": "#ffb2bf",
+                "inverse-primary": "#ffb2bf",
+                "surface": "#fff8f6",
+                "on-primary-container": "#834451",
+                "surface-container-high": "#ffe2db",
+                "primary-container": "#ffbdc8",
+                "outline": "#827473",
+                "surface-variant": "#ffdad2",
+                "on-secondary-fixed-variant": "#5d4037",
+                "tertiary": "#635e53",
+                "surface-container-highest": "#ffdad2",
+                "on-tertiary-fixed-variant": "#4b463c",
+                "surface-container": "#ffe9e4",
+                "on-surface-variant": "#504444"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Noto Serif"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .serif-font {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container relative">
+<!-- New Order Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-[#2b1611]/60 backdrop-blur-sm"></div>
+<!-- Modal Content -->
+<div class="relative bg-surface-container-lowest w-full max-w-md rounded-2xl shadow-[0_24px_48px_rgba(43,22,17,0.2)] overflow-hidden border border-outline-variant/30">
+<div class="p-8">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mb-6 mx-auto">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="notifications_active">notifications_active</span>
+</div>
+<div class="text-center mb-8">
+<h2 class="text-3xl serif-font text-on-surface font-bold mb-2">New Order Received</h2>
+<p class="text-on-surface-variant">A new high-value order is awaiting your approval.</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 mb-8 space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Order ID</span>
+<span class="font-mono font-bold text-on-surface">#SC-8292</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Customer</span>
+<span class="font-bold text-on-surface">Eleanor Maxwell</span>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-on-surface font-bold uppercase tracking-wider text-xs">Total Amount</span>
+<span class="text-2xl font-bold text-primary serif-font">$1,240.00</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold transition-all hover:opacity-90 active:scale-[0.98]">
+                    Accept Order
+                </button>
+<button class="w-full bg-transparent border-2 border-outline-variant text-on-surface-variant py-4 rounded-xl font-bold transition-all hover:bg-surface-container-low active:scale-[0.98]">
+                    Reject Order
+                </button>
+</div>
+</div>
+<div class="bg-primary/5 py-4 px-8 text-center">
+<p class="text-[11px] uppercase tracking-[0.2em] text-primary/60 font-bold">Priority Notification</p>
+</div>
+</div>
+</div>
+<div class="flex min-h-screen">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="bg-[#fff0ed] dark:bg-[#2b1611] h-screen w-64 fixed left-0 top-0 flex flex-col p-4 gap-2 z-40">
+<div class="mb-8 px-4 py-2">
+<h1 class="font-['Noto_Serif'] text-lg text-[#8b4b58] font-bold tracking-tight">Admin Portal</h1>
+<p class="font-['Plus_Jakarta_Sans'] text-xs text-[#795950] opacity-80">Sonali Cakes Management</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="bg-[#ffffff] dark:bg-[#3d241e] text-[#8b4b58] font-bold rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-400 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="text-[#795950] dark:text-[#d4c2c2] px-4 py-3 flex items-center gap-3 hover:bg-[#ffdad2] dark:hover:bg-[#4a2f28] rounded-lg transition-all duration-400 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide">Inventory</span>
+</a>
+<a class="text-[#795950] dark:text-[#d4c2c2] px-4 py-3 flex items-center gap-3 hover:bg-[#ffdad2] dark:hover:bg-[#4a2f28] rounded-lg transition-all duration-400 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide">Orders</span>
+</a>
+<a class="text-[#795950] dark:text-[#d4c2c2] px-4 py-3 flex items-center gap-3 hover:bg-[#ffdad2] dark:hover:bg-[#4a2f28] rounded-lg transition-all duration-400 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide">Settings</span>
+</a>
+<a class="text-[#795950] dark:text-[#d4c2c2] px-4 py-3 flex items-center gap-3 hover:bg-[#ffdad2] dark:hover:bg-[#4a2f28] rounded-lg transition-all duration-400 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide">Profile</span>
+</a>
+</nav>
+<div class="mt-auto p-4 flex items-center gap-3 bg-surface-container-highest/30 rounded-xl">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Admin Portrait" class="w-full h-full object-cover" data-alt="professional headshot of a smiling female manager in a soft pink studio setting with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3FxXeQwuGLjRjHaTzSjkOpaRbm_3PfvpqDQsfIjkAVXWKH_IqqkdlCTdaxqiSwSMiNkDRzAfOQlaF4wdVaG887tpk8hgk8N91bULiVnbrf8EbILxji4CfDnFIw89hUv44KG1ZlR7NdFaYZGPnFI2v2swBU7me0-K3FUu_sUoEOGs43HiHl0yleadqQpkNkXKWjiFE56pBm-eJF2GZf_vaXZH9m8sc6W6dhVVn7H4VDaWiSMLliKEjO-6hVyTnYiiKHpL6gwL2Zrk"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">Sonali Gupta</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Master Baker</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-8 lg:p-12 overflow-y-auto">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-12">
+<div class="max-w-xl">
+<h2 class="text-display-lg serif-font text-on-surface leading-tight font-bold mb-2 text-[3.5rem]">Morning, Sonali</h2>
+<p class="text-body-lg text-on-surface-variant">Your kitchen is bustling today. Here is the latest overview of your bakery's performance.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-400 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                        Export Report
+                    </button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-400 hover:opacity-90">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        New Order
+                    </button>
+</div>
+</header>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<!-- Total Orders -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="material-symbols-outlined text-primary mb-4" data-icon="shopping_basket">shopping_basket</span>
+<h3 class="text-label-md uppercase tracking-wider text-on-surface-variant">Total Orders</h3>
+</div>
+<div>
+<p class="text-4xl font-bold text-on-surface serif-font">142</p>
+<p class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-green-600" data-icon="trending_up">trending_up</span>
+<span class="text-green-600 font-bold">+12%</span> vs last week
+                        </p>
+</div>
+</div>
+<!-- Total Revenue -->
+<div class="bg-primary text-on-primary p-6 rounded-xl flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="material-symbols-outlined text-primary-container mb-4" data-icon="payments">payments</span>
+<h3 class="text-label-md uppercase tracking-wider text-primary-fixed-dim">Revenue</h3>
+</div>
+<div>
+<p class="text-4xl font-bold serif-font">$4,890</p>
+<p class="text-xs text-primary-fixed-dim mt-1">Updated 5m ago</p>
+</div>
+</div>
+<!-- Avg Rating -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="material-symbols-outlined text-primary mb-4" data-icon="star">star</span>
+<h3 class="text-label-md uppercase tracking-wider text-on-surface-variant">Customer Love</h3>
+</div>
+<div>
+<p class="text-4xl font-bold text-on-surface serif-font">4.9</p>
+<div class="flex gap-1 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+</div>
+</div>
+<!-- Pending -->
+<div class="bg-secondary-container p-6 rounded-xl flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="material-symbols-outlined text-on-secondary-container mb-4" data-icon="schedule">schedule</span>
+<h3 class="text-label-md uppercase tracking-wider text-on-secondary-container">In Oven</h3>
+</div>
+<div>
+<p class="text-4xl font-bold text-on-secondary-container serif-font">18</p>
+<p class="text-xs text-on-secondary-container/70 mt-1">Active prep items</p>
+</div>
+</div>
+</div>
+<!-- Detailed Insights Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<!-- Popular Products (Asymmetric Card) -->
+<div class="lg:col-span-1 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(43,22,17,0.06)]">
+<h3 class="text-headline-md serif-font mb-8">Popular Treats</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Rose Lychee Cake" class="w-full h-full object-cover" data-alt="exquisite multi-layered rose lychee cake with delicate pink frosting and real rose petals on top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7hq3qXU8fYb1mywOimMimW4MTNt2UMdbJ6gIAlMuUqbLKUF3G5vqkqNyOpXBjcMjzPMcR5vpkQYfX--Q1thRihOo9quCzeCCbPr4dRLLSZzakRNr0DZBop0rkYPlMGrauDXm2xivNr49aWApXemXVBxXtD4S0cpefAYxZrG5eoyffpiC8jfjyI9oVgT8ptG2x0Ye2rRfmYuQzM5hJEBljYKrEusFco5o81yiaVmNF9EUYk26vkciKYT22JTQtFPG426zm6hnLw-U"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-on-surface">Rose Lychee Bloom</h4>
+<p class="text-xs text-on-surface-variant">42 Sold this week</p>
+</div>
+<span class="text-primary font-bold">$65</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Dark Cocoa Forest" class="w-full h-full object-cover" data-alt="rich dark chocolate cake with cherry filling and chocolate shavings in a moody kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnW3O_CiHmIHWFkyiRuf6UlVv2Wp0BQgISjCTjG66M9Gl3YRbjNMlfIsUwrkIWcjKkuJw6aGkCPm0SE5p8QrarT_jjo-dhbyUBzcbLIKI8QNZWSyBr2q4uc-EI0VCadCdb3Tmxq8IQfBrKKrHKpE5CZJQKOHutgI6EwJd4hqw93NBRnr5uW_PLdyDNdc-RRM-dhnCQmcTNDGK-jzJFqKATlXEd0aQVp1f0jhrwVrrNKDPMkZvNln9VOazmu9UwClHW8nmF8EY4oBQ"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-on-surface">Dark Cocoa Forest</h4>
+<p class="text-xs text-on-surface-variant">38 Sold this week</p>
+</div>
+<span class="text-primary font-bold">$72</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Saffron Pistachio" class="w-full h-full object-cover" data-alt="vibrant saffron-colored cake topped with crushed green pistachios and honey drizzle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzeLDZ5f5JgZ5IPgsiZz1z-RjIuBNfnXV1inEPpCJsj3BSIfGI_lOfOsinbuBo71UlDU7kvIs_p2KNW4rifanbasZH2cMBZXtRyYiGksrEQjATNAwU24b0mxf4zPQCc_1IO0quZ22BeudFc6jjKOzqDO8G3HEpRUBNPjtJ8KtbmgiD3_0_9_9H61C4Ibh4Xy3-KD36PKlp-sGarC4O7FufZCMgCa9nUpYy8tm4DRwucEfpZsAxsdavt4heSW6_3L7iUNvTIEK_rJM"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-on-surface">Saffron Pistachio</h4>
+<p class="text-xs text-on-surface-variant">29 Sold this week</p>
+</div>
+<span class="text-primary font-bold">$58</span>
+</div>
+</div>
+</div>
+<!-- Order Status Chart (Visual Representation) -->
+<div class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl flex flex-col">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="text-headline-md serif-font">Order Flow</h3>
+<p class="text-body-lg text-on-surface-variant">Capacity vs. Demand</p>
+</div>
+<select class="bg-surface-container-lowest border-none rounded-lg text-sm text-on-surface-variant focus:ring-primary">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="flex-1 flex items-end justify-between gap-4 h-48 px-4">
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-lg h-[40%] transition-all duration-400 hover:bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">MON</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-lg h-[65%] transition-all duration-400 hover:bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">TUE</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-lg h-[90%] transition-all duration-400 hover:bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">WED</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-lg h-[55%] transition-all duration-400 hover:bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">THU</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-lg h-[75%] transition-all duration-400 hover:bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">FRI</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary rounded-t-lg h-[100%]"></div>
+<span class="text-[10px] font-bold text-on-surface">SAT</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-lg h-[45%] transition-all duration-400 hover:bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">SUN</span>
+</div>
+</div>
+<div class="mt-8 flex gap-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-xs font-medium text-on-surface-variant">Completed</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary/20"></span>
+<span class="text-xs font-medium text-on-surface-variant">In Progress</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Orders Section -->
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_12px_32px_rgba(43,22,17,0.04)]">
+<div class="p-8 flex justify-between items-center">
+<h3 class="text-headline-md serif-font">Recent Orders</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Find an order..." type="text"/>
+</div>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">
+<tr>
+<th class="px-8 py-4">Order ID</th>
+<th class="px-8 py-4">Customer</th>
+<th class="px-8 py-4">Product</th>
+<th class="px-8 py-4">Status</th>
+<th class="px-8 py-4">Total</th>
+<th class="px-8 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Order 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-mono text-xs text-on-surface-variant">#SC-9042</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold text-on-secondary-container">AM</div>
+<span class="font-semibold text-on-surface">Arjun Mehta</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface">Rose Lychee Bloom (2kg)</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700">Delivered</span>
+</td>
+<td class="px-8 py-5 font-bold text-on-surface">$130.00</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-mono text-xs text-on-surface-variant">#SC-9043</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-[10px] font-bold text-on-primary-container">SK</div>
+<span class="font-semibold text-on-surface">Sara Khan</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface">Assorted Bouquets (x3)</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-700">In Oven</span>
+</td>
+<td class="px-8 py-5 font-bold text-on-surface">$85.50</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-mono text-xs text-on-surface-variant">#SC-9044</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-[10px] font-bold text-on-tertiary-container">RP</div>
+<span class="font-semibold text-on-surface">Rohan Patel</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface">Custom Wedding Cake Tier</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-700">Designing</span>
+</td>
+<td class="px-8 py-5 font-bold text-on-surface">$450.00</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-container-low flex justify-center">
+<button class="text-primary font-bold text-sm hover:underline">View All 1,248 Orders</button>
+</div>
+</section>
+</main>
+</div>
+</body></html>

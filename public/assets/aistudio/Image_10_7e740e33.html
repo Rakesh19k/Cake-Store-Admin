@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Details | Artisanal Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffd9de",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#795950",
+                    "tertiary-fixed": "#e9e2d3",
+                    "on-primary-fixed-variant": "#6f3441",
+                    "surface-container-low": "#fff0ed",
+                    "inverse-on-surface": "#ffede9",
+                    "tertiary": "#635e53",
+                    "primary": "#8b4b58",
+                    "surface-variant": "#ffdad2",
+                    "outline-variant": "#d4c2c2",
+                    "tertiary-container": "#d4cdbf",
+                    "background": "#fff8f6",
+                    "surface-bright": "#fff8f6",
+                    "on-surface-variant": "#504444",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#2b1611",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#ffe9e4",
+                    "on-tertiary-fixed-variant": "#4b463c",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "secondary": "#77574d",
+                    "on-tertiary-fixed": "#1e1b13",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fed3c7",
+                    "surface-container-highest": "#ffdad2",
+                    "outline": "#827473",
+                    "surface-tint": "#8b4b58",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "surface-dim": "#f9d1c8",
+                    "secondary-fixed": "#ffdbd0",
+                    "inverse-surface": "#432a25",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#5b574c",
+                    "on-surface": "#2b1611",
+                    "on-primary-fixed": "#390917",
+                    "on-primary-container": "#834451",
+                    "primary-container": "#ffbdc8",
+                    "inverse-primary": "#ffb2bf",
+                    "on-secondary-fixed": "#2c160e",
+                    "primary-fixed-dim": "#ffb2bf",
+                    "surface": "#fff8f6",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#ffe2db",
+                    "tertiary-fixed-dim": "#cdc6b8",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2b1611;
+            background-color: #fff8f6;
+        }
+        .serif-headline {
+            font-family: 'Noto Serif', serif;
+            letter-spacing: -0.02em;
+        }
+    </style>
+</head>
+<body class="bg-background">
+<!-- SideNavBar Shell -->
+<nav class="fixed left-0 top-0 h-screen w-64 bg-[#fff8f6] dark:bg-[#2b1611] flex flex-col p-6 h-full border-r-0 shadow-[12px_0_32px_rgba(43,22,17,0.04)] z-50">
+<div class="text-lg font-serif text-[#8b4b58] dark:text-[#ffbdc8] mb-8">Artisanal Admin</div>
+<div class="flex flex-col gap-2 mb-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-400 hover:bg-[#fff0ed] dark:hover:bg-[#3d2a25] opacity-80 text-[#795950] dark:text-[#d4c2c2] font-sans text-sm tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-400 text-[#8b4b58] dark:text-[#ffbdc8] font-semibold border-r-4 border-[#8b4b58] bg-[#fff0ed] dark:bg-[#3d2a25] font-sans text-sm tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="cake">cake</span>
+                Orders
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-400 hover:bg-[#fff0ed] dark:hover:bg-[#3d2a25] opacity-80 text-[#795950] dark:text-[#d4c2c2] font-sans text-sm tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                Inventory
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-400 hover:bg-[#fff0ed] dark:hover:bg-[#3d2a25] opacity-80 text-[#795950] dark:text-[#d4c2c2] font-sans text-sm tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-400 hover:bg-[#fff0ed] dark:hover:bg-[#3d2a25] opacity-80 text-[#795950] dark:text-[#d4c2c2] font-sans text-sm tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Reports
+            </a>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 active:scale-95 transition-transform duration-400">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                New Custom Order
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 mt-4 opacity-80 text-[#795950] font-sans text-sm tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                Help Center
+            </a>
+</div>
+</nav>
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center px-8 h-20 w-[calc(100%-16rem)] ml-64 bg-[#fff8f6]/70 backdrop-blur-xl fixed top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="font-serif tracking-tight text-xl text-[#8b4b58]">Order Details</span>
+<span class="text-label-md bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase">#SC-8291</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined text-[#8b4b58] cursor-pointer" data-icon="notifications">notifications</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></div>
+</div>
+<span class="material-symbols-outlined text-[#8b4b58] cursor-pointer" data-icon="settings">settings</span>
+<div class="flex items-center gap-3 border-l border-outline-variant/30 pl-6">
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface">Chef Julianne</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Head Pastry Designer</p>
+</div>
+<img alt="Admin profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="professional portrait of a pastry chef in white uniform with a friendly smile in a sunlit kitchen background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1KiOgZxKYqA404hUCfPTVynygb0NDA2A8ufG8pZBjozRlVsTgKiZKrpmQYXduJPIm4dg3FacUliDT3zE7wNzD6Zq_pe7xqFBk8FILzpGw36-Z0YCu43MPr9Pp7wZZR-9JhZ_JosRznrLIWiv3NAGxVkOEEwO5gDI5j3_7hBkPAxV3YKRDhLa_lMJ28FXGWqaf8qfLWywKMG_fX8c8eDkmduPCsyrNNpxthM5qv_MyNxPkOcLX7LcKQKMlhlq_vR8UbKG9IyQYNCc"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-28 px-12 pb-12 min-h-screen">
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Details -->
+<div class="col-span-8 flex flex-col gap-8">
+<!-- Order Content Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_32px_rgba(43,22,17,0.04)]">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="serif-headline text-3xl text-on-surface">Wedding Collection</h2>
+<p class="text-on-surface-variant font-body">Scheduled for Delivery: June 24, 2024</p>
+</div>
+<div class="text-right">
+<span class="text-on-surface-variant text-label-md uppercase tracking-widest block mb-1">Total Amount</span>
+<span class="text-3xl font-bold text-primary">$1,240.00</span>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="flex items-center gap-6 group">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Wedding Cake Tiered" class="w-full h-full object-cover" data-alt="exquisite three-tier white wedding cake decorated with fresh pastel roses and delicate sugar pearls on a marble stand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7xhSqWITquCwotkceCP_Ujq8D_amC-UOr-TPz7dlBIHfwOswtZhWN4B-VmQ2fG1VnmEoTm2u_nvaKOfDt3w3tcHa-YAwi_7tjqLHblZGDjFaCaL7g2U45OxPsGW2Hzswv4OX3yGN_LtSUXXV6aiN-BS1DGnGtFc9_J-7idmg4FjqdJUpZwtKqVG71gUc7A1iw7QDMIKyfS-OEoh5MMV3KFvWsM_ixkS-mkrtrxIpoXE8A2RY9JE92eBmCutSItc2-IRMafQWEkZw"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl text-on-surface">Grand Tiered Wedding Cake</h3>
+<p class="text-on-surface-variant text-sm">3-Tiers, Bourbon Vanilla, Raspberry Filling</p>
+</div>
+<span class="font-bold text-on-surface">$850.00</span>
+</div>
+<div class="mt-2 flex gap-2">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-tighter">Boutique Selection</span>
+<span class="bg-surface-container text-on-secondary-container text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-tighter">Custom Flavors</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-6 group">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Pastry Bouquet" class="w-full h-full object-cover" data-alt="a decorative edible bouquet made of intricately decorated floral cupcakes and macarons in shades of cream and blush pink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACy8Vu1W9eoQfqSD0FT0ugRH_AJof8DIK7X_-vXUaM6D9n2U_Mdihq0sSXHY1wr9ZWNATl5q262SGBh8DypFV85TEpJJyFU0Gs-s44Ku8WEd9I3ZCuwVL2pfhjx0MZOPgbqSb30wMU-tvHc3JyJY2_l6kuPhHvX2rtNe9EksqwInJ2obAy7kJTPq2BQhN91kOLti_6nsBsexevZUPO1IgSztME0hiHyp7ATykg2DCImkdlPNTaE3CN0DT2pp7fikarVjw4_LOr4Gc"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl text-on-surface">Signature Pastry Bouquet</h3>
+<p class="text-on-surface-variant text-sm">Macaron Blossoms, Edible Gold Leaf Accents</p>
+</div>
+<span class="font-bold text-on-surface">$390.00</span>
+</div>
+<div class="mt-2 flex gap-2">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-tighter">Seasonal</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer & Delivery Grid -->
+<div class="grid grid-cols-2 gap-8">
+<!-- Customer Card -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="person">person</span>
+</div>
+<h4 class="text-label-md uppercase tracking-widest text-on-surface-variant mb-4">Customer Details</h4>
+<p class="font-headline text-2xl text-on-surface mb-1">Eleanor Maxwell</p>
+<p class="text-on-surface-variant mb-4">eleanor.m@example.com</p>
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                            +1 (555) 234-8891
+                        </div>
+</div>
+<!-- Delivery Card -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="local_shipping">local_shipping</span>
+</div>
+<h4 class="text-label-md uppercase tracking-widest text-on-surface-variant mb-4">Delivery Address</h4>
+<p class="font-headline text-2xl text-on-surface mb-1">Willow Estate</p>
+<address class="not-italic text-on-surface-variant leading-relaxed">
+                            482 Oakwood Terrace<br/>
+                            Hamptons, NY 11937
+                        </address>
+</div>
+</div>
+<!-- Timeline Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8">
+<h4 class="text-label-md uppercase tracking-widest text-on-surface-variant mb-8">Activity Timeline</h4>
+<div class="space-y-8 relative">
+<!-- Connection Line -->
+<div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-outline-variant/30"></div>
+<!-- Timeline Item 1 -->
+<div class="flex gap-6 relative">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[12px] text-on-primary" data-icon="check" data-weight="fill">check</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Order Received</p>
+<p class="text-xs text-on-surface-variant">June 18, 2024 · 09:12 AM</p>
+<p class="text-sm text-on-surface-variant mt-1 italic">Order successfully processed via online boutique portal.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="flex gap-6 relative">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[12px] text-on-primary" data-icon="check" data-weight="fill">check</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Ingredients Sourced</p>
+<p class="text-xs text-on-surface-variant">June 19, 2024 · 11:30 AM</p>
+<p class="text-sm text-on-surface-variant mt-1">Inventory reserved: Organic Bourbon Vanilla, Valrhona Cocoa.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="flex gap-6 relative">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center z-10 border-4 border-surface-container-lowest"></div>
+<div>
+<p class="font-bold text-on-surface">Baking In Progress</p>
+<p class="text-xs text-on-surface-variant">June 21, 2024 · 06:00 AM</p>
+<p class="text-sm text-on-surface-variant mt-1">Currently in the tiered cooling phase. Decoration scheduled for tomorrow.</p>
+</div>
+</div>
+<!-- Timeline Item 4 (Future) -->
+<div class="flex gap-6 relative opacity-40">
+<div class="w-6 h-6 rounded-full bg-outline-variant flex items-center justify-center z-10"></div>
+<div>
+<p class="font-bold text-on-surface">Scheduled for Delivery</p>
+<p class="text-xs text-on-surface-variant">Estimated June 24, 2024</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Status & Map -->
+<div class="col-span-4 flex flex-col gap-8">
+<!-- Status Update Section -->
+<section class="bg-surface-container rounded-xl p-6 border-outline-variant/10 border-2">
+<h4 class="text-label-md uppercase tracking-widest text-on-surface-variant mb-6">Current Status Update</h4>
+<div class="space-y-4">
+<!-- Status Cards -->
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="pending">pending</span>
+<span class="font-semibold text-on-secondary-container">Pending</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-primary text-on-primary ring-4 ring-primary-container transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="restaurant" data-weight="fill">restaurant</span>
+<span class="font-semibold">Baking</span>
+</div>
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="local_shipping">local_shipping</span>
+<span class="font-semibold text-on-secondary-container">Out for Delivery</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="celebration">celebration</span>
+<span class="font-semibold text-on-secondary-container">Completed</span>
+</div>
+</button>
+</div>
+<div class="mt-8">
+<label class="block text-[10px] uppercase font-bold tracking-widest text-on-surface-variant mb-2">Internal Note</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-sm focus:ring-1 focus:ring-primary h-24 placeholder:text-outline-variant/60" placeholder="Add a note for the kitchen staff..."></textarea>
+<button class="mt-4 w-full bg-secondary text-on-secondary py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">Save Note</button>
+</div>
+</section>
+<!-- Map Integration -->
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(43,22,17,0.02)]">
+<div class="h-64 w-full bg-surface-variant relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" data-alt="clean, stylized aerial map view of an upscale residential neighborhood with lush green trees and tidy coastal roads" data-location="Hamptons, NY" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCruzDUUw0VfRUSagrBdgg4pxtzrgPmOzl58H_IsR-Db6eKPfjwxaiK7jkIbd_yl_TzDeQLcuodJPZ9OMka1uTOn3ak8XVBrsVhuLLPOMKvUkZsR7wbT2qkgsLk23OshVBrBOqbmJt4eEYauGQSlDSkWy9vh0PJGOGaFv40YZRynOtJi76fO5_hjjeKwNjKfOaZtuMD7DEtyRaNVJ9iBNtyEwDhiDR87koE6Kv0gwaDhjp4RHSi4ghsYhIJWq_Ys0k7Q_eLgMTI4w0"/>
+<!-- Marker -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg" data-icon="location_on" data-weight="fill">location_on</span>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-2 bg-on-surface/20 blur-sm rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-label-md uppercase tracking-widest text-on-surface-variant mb-2">Delivery Logisitics</h4>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="distance">distance</span>
+<span class="text-on-surface font-body font-medium">12.4 miles from Kitchen</span>
+</div>
+<span class="text-xs font-bold text-on-secondary-container bg-secondary-container px-2 py-1 rounded">VVIP ROUTE</span>
+</div>
+</div>
+</section>
+<!-- Support Anchor -->
+<div class="bg-[#2b1611] text-[#fff8f6] rounded-xl p-6 flex flex-col gap-4">
+<p class="font-headline text-lg">Need Assistance?</p>
+<p class="text-xs opacity-70 leading-relaxed">Direct line to the floor manager available for high-priority bridal orders.</p>
+<button class="flex items-center gap-2 text-primary-fixed font-bold text-sm hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="call_quality">call_quality</span>
+                        Call Floor Manager
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
